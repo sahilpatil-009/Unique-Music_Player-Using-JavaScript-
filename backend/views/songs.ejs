@@ -1,0 +1,52 @@
+<!-- views/songs.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song List</title>
+</head>
+<body style="text-align: center;">
+  <h1>Song List</h1>
+  <table border="1" style="width: 100%;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Song Name</th>
+        <th>Artist Name</th>
+        <th>Year</th>
+        <th>Song Image</th>
+        <th>Song Audio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let song of songs) { %>
+        <tr>
+          <td><%= song.id %></td>
+          <td><%= song.songname %></td>
+          <td><%= song.artistname %></td>
+          <td><%= song.year %></td>
+          <td><img src="<%= song.song_image %>" alt="Song Image" style="max-width: 100px; max-height: 100px;"></td>
+          <td>
+            <audio controls>
+              <source src="<%= song.song_audio %>" type="audio/mp3">
+              Your browser does not support the audio tag.
+            </audio>
+          </td>
+          <td>
+            <form action="/edit/<%= song.id %>" method="get">
+              <button type="submit">Edit</button>
+            </form>
+          </td>
+          <td>
+            <form method="post" action="/delete/<%= song.id %>">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

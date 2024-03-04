@@ -1,0 +1,31 @@
+<!-- views/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Song</title>
+</head>
+<body>
+  <h1>Edit Song</h1>
+  <form action="/edit/<%= song.id %>" method="post" enctype="multipart/form-data">
+    <label for="songname">Song Name:</label>
+    <input type="text" id="songname" name="songname" value="<%= song.songname %>" required><br>
+
+    <label for="artistname">Artist Name:</label>
+    <input type="text" id="artistname" name="artistname" value="<%= song.artistname %>" required><br>
+
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year" value="<%= song.year %>" required><br>
+
+    <label for="song_image">Song Image:</label>
+    <input type="file" id="song_image" name="song_image" accept="image/*"><br>
+
+    <label for="song_audio">Song Audio:</label>
+    <input type="file" id="song_audio" name="song_audio" accept="audio/*"><br>
+
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>

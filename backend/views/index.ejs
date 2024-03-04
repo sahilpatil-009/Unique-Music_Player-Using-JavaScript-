@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload</title>
+</head>
+<body>
+  <h1>Upload Song</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <label for="songname">Song Name:</label>
+    <input type="text" id="songname" name="songname" required><br>
+
+    <label for="artistname">Song Artist:</label>
+    <input type="text" id="artistname" name="artistname" required><br>
+
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year" required><br>
+
+    <label for="song_image">Song Image:</label>
+    <input type="file" id="song_image" name="song_image" accept="image/*" required><br>
+
+    <label for="song_audio">Song Audio:</label>
+    <input type="file" id="song_audio" name="song_audio" accept="audio/*" required><br>
+
+    <button type="submit">Upload</button>
+  </form>
+  <br /> <br />
+  <form action="/songs">
+    <button>All songs</button>
+  </form>
+</body>
+</html>
+
+
+

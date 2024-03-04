@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Add this form inside the body section of your HTML file -->
+    <div id="addSongForm" class="add-song-form">
+        <form id="songForm">
+            <label for="songName">Song Name:</label>
+            <input type="text" id="songName" name="songName" required>
+
+            <label for="artistName">Artist Name:</label>
+            <input type="text" id="artistName" name="artistName" required>
+
+            <label for="songYear">Year:</label>
+            <input type="number" id="songYear" name="songYear" required>
+
+            <label for="songImage">Song Image:</label>
+            <input type="file" id="songImage" name="songImage" accept="image/*" required>
+
+            <label for="songAudio">Song Audio:</label>
+            <input type="file" id="songAudio" name="songAudio" accept="audio/*" required>
+
+            <button type="submit">Add Song</button>
+        </form>
+    </div>
+
+    <script src="addSong.js"></script>
+</body>
+
+</html>
